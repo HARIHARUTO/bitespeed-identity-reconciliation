@@ -17,6 +17,10 @@ export function createApp(db: Database) {
 
   app.use(express.json());
 
+  app.get("/", (_req, res) => {
+    res.status(200).json({ message: "Bitespeed Identity Reconciliation API is running" });
+  });
+
   app.get("/health", (_req, res) => {
     res.status(200).json({ ok: true });
   });
